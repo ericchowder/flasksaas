@@ -8,11 +8,15 @@ from flask import Flask
 from dotenv import load_dotenv
 
 # Load .env.local file and specify relative path
-load_dotenv(dotenv_path=="./.env.local")
+load_dotenv(dotenv_path="./.env.local") 
 
 # Gets UNSPLASH_KEY from .env.local, second arg is backup
 UNSPLASH_KEY=os.environ.get("UNSPLASH_KEY", "")
 UNSPLASH_URL="https://api.unsplash.com/photos/random"
+
+# Make sure UNSPLASH_KEY exists
+if not UNSPLASH_KEY:
+    raise EnvironmentError("Please create .env.local with UNSPLASH_KEY")
 
 # __name__ is the name of the flask module being ran
 app = Flask(__name__)
