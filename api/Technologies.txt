@@ -1,3 +1,0 @@
-1. Globally installed python and pip
-2. Using pip, install pipenv (pip install --user pipenv)
-3. Using pipenv, install flask into venv (pipenv install flask==1.1.2)
