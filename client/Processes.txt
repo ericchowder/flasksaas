@@ -1,0 +1,13 @@
+1. Create-react-app install
+2. Delete following from src:
+- app.css
+- app.test.js
+- logo.svg
+- reportWebVitals.js
+- setupTests.js
+3. Remove reportWebVitals lines from index.js
+4. Remove "code"  tag in index.css
+5. Move index.css into css folder
+6. Delete public files, except index and robots and get new ones from favicon.into
+7. Install react-boostrap
+8. Create components folder in src, add Header.js files
