@@ -1,20 +1,16 @@
-from flask import Flask
+from flask import Flask, Blueprint
 from flask_sqlalchemy import SQLAlchemy
 # Allow use of .env.local file
 from dotenv import load_dotenv
-import os
+# Extensions
+from api.database import db
+#from api.main import app
 
 # Load .env.local file and specify relative path
 load_dotenv(dotenv_path="./.env.local") 
 
-app = Flask(__name__)
-
-app.config["SECRET_KEY"] = "mysecretkey"
-app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("SQLITE_URI", "")
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-
-db = SQLAlchemy(app)
-db.create_all()
+# Init blueprint
+models = Blueprint('models', __name__)
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -29,5 +25,6 @@ class Todo(db.Model):
     complete = db.Column(db.Boolean)
     user_id = db.Column(db.Integer)
 
-if __name__ == "__main__":
-    app.run(debug=True)
+@models.route('/user', methods=['GET'])
+def get_users():
+    return 'users route here!'

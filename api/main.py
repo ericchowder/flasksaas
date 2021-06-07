@@ -21,6 +21,18 @@ if not UNSPLASH_KEY:
 # __name__ is the name of the flask module being ran
 app = Flask(__name__)
 
+app.config["SECRET_KEY"] = "mysecretkey"
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("SQLITE_URI", "")
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+
+from api.database import db
+from api.model import models
+app.register_blueprint(models)
+
+db.init_app(app)
+with app.app_context():
+    db.create_all()
+
 @app.route("/")
 def hello():
     return "Hello, World!"
@@ -48,3 +60,8 @@ def new_image():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5050)
+
+'''
+if __name__ == "__main__":
+    app.run(debug=True)
+'''
