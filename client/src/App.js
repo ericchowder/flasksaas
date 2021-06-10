@@ -4,6 +4,8 @@ import Header from './components/Header';
 import Search from './components/Search';
 import TestComp from './components/TestComp';
 
+const UNSPLASH_KEY = process.env.REACT_APP_UNSPLASH_KEY
+
 function App() {
   // Create state variables for search words
   // Will be passed as props to Search comp
@@ -14,6 +16,14 @@ function App() {
   const handleSearchSubmit = (e) => {
     e.preventDefault();
     console.log(searchWord);
+    fetch(`https://api.unsplash.com/photos/random/?query=${searchWord}&client_id=${UNSPLASH_KEY}`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
   }
 
   console.log("searchWord auto updates:", searchWord)
@@ -21,6 +31,7 @@ function App() {
   return (
     <div className="App">
       <Header title="Flask Saas"/>
+      {/* setting word and setWord properties of Search comp */}
       <Search word={searchWord} setWord={setSearchWord} handleSubmit={handleSearchSubmit}/>
       <TestComp />
     </div>

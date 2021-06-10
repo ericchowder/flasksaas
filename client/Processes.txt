@@ -13,4 +13,5 @@
 8. Create components folder in src, add Header.js files
 9. Added navBarStyle and implemented react bootsrap grid
 10. Implement search bar to use react state
-11. Implement Unsplash API connection
+11. Create .env and create unsplash api var
+12. Implement unsplash api access with query parameter
