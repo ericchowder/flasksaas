@@ -12,3 +12,5 @@
 7. Install react-boostrap
 8. Create components folder in src, add Header.js files
 9. Added navBarStyle and implemented react bootsrap grid
+10. Implement search bar to use react state
+11. Implement Unsplash API connection
