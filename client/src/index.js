@@ -1,7 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './css/index.css';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./css/index.css";
+import App from "./App";
 
 const test = true;
 
@@ -12,5 +12,5 @@ ReactDOM.render(
     }
     {test ? <App /> : <h1>Hello from Index.js</h1>}
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );

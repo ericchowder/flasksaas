@@ -15,3 +15,14 @@
 10. Implement search bar to use react state
 11. Create .env and create unsplash api var
 12. Implement unsplash api access with query parameter
+13. Install eslint and introduce it to settings.json for:
+- html
+- javascript
+- javascriptreact
+14. Npm install the following as dev dependencies (install -D):
+- prettier
+- eslint-config-prettier
+- eslint-plugin
+and add "plugin:prettier/recommended" to eslintConfig in package.json
+and settings.json add codeActionsOnSave property
+15. Create lint script in package.json

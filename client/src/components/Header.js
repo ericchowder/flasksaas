@@ -1,19 +1,19 @@
-import React from 'react';
-import { Navbar } from 'react-bootstrap';
+import React from "react";
+import { Navbar } from "react-bootstrap";
 
 // Vanilla JS object using CSS properties
 const navBarStyle = {
-    backgroundColor: 'lightblue'
-}
+  backgroundColor: "lightblue",
+};
 
 // Props allows variables to be passed in from where the component is being used
 // Here, the title variable was passed in and used
 const Header = ({ title }) => {
-    return (
-        <Navbar style={navBarStyle} variant="light">
-            <Navbar.Brand href="/">{title}</Navbar.Brand>
-        </Navbar>
-    )
+  return (
+    <Navbar style={navBarStyle} variant="light">
+      <Navbar.Brand href="/">{title}</Navbar.Brand>
+    </Navbar>
+  );
 };
 
 /* Long way
@@ -27,4 +27,4 @@ const Header = (props) => {
 };
 */
 
-export default Header
+export default Header;
