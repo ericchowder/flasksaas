@@ -25,4 +25,4 @@
 - eslint-plugin
 and add "plugin:prettier/recommended" to eslintConfig in package.json
 and settings.json add codeActionsOnSave property
-15. Create lint script in package.json
+15. Create lint script in package.json, add endOfLine property
