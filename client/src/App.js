@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Search from "./components/Search";
 import TestComp from "./components/TestComp";
 import ImageCard from "./components/ImageCard";
+import { Container, Row, Col } from "react-bootstrap";
 
 const UNSPLASH_KEY = process.env.REACT_APP_UNSPLASH_KEY;
 
@@ -48,15 +49,26 @@ function App() {
         setWord={setSearchWord}
         handleSubmit={handleSearchSubmit}
       />
-      {/* Only insert ImageCard if images.length == true (an image exists)
-          !! converts to bool*/}
-      {/* !!images.length && <ImageCard image={images[0]} /> */}
-      {/* Uses JS map function to map each image in images array to new array
-          Each image in images array is now passed individually to new instance of ImageCard
-          key={i} allows for react to identify each array element more easily */}
-      {images.map((image, i) => (
-        <ImageCard key={i} image={image} />
-      ))}
+      {/* margin top 4 */}
+      <Container className="mt-4">
+        {/* Can be treated like phones tablets laptops
+            Phones allow 1 images per row
+            Tablets allow 2 images per row
+            Laptops allwo 3 images per row */}
+        <Row xs={1} md={2} lg={3}>
+          {/* Only insert ImageCard if images.length == true (an image exists)
+              !! converts to bool*/}
+          {/* !!images.length && <ImageCard image={images[0]} /> */}
+          {/* Uses JS map function to map each image in images array to new array
+              Each image in images array is now passed individually to new instance of ImageCard
+              key={i} allows for react to identify each array element more easily */}
+          {images.map((image, i) => (
+            <Col key={i} className="pb-3">
+              <ImageCard image={image} />
+            </Col>
+          ))}
+        </Row>
+      </Container>
       <TestComp />
     </div>
   );

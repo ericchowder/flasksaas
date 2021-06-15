@@ -26,3 +26,5 @@
 and add "plugin:prettier/recommended" to eslintConfig in package.json
 and settings.json add codeActionsOnSave property
 15. Create lint script in package.json, add endOfLine property
+16. Created ImageCard comp, used JS maps to map ImageCard instances
+17. Used react boostrap containers to organize ImageCards
