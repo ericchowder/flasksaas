@@ -48,9 +48,15 @@ function App() {
         setWord={setSearchWord}
         handleSubmit={handleSearchSubmit}
       />
-      {/* Only insert ImageCard if images.length == true 
+      {/* Only insert ImageCard if images.length == true (an image exists)
           !! converts to bool*/}
-      {!!images.length && <ImageCard image={images[0]} />}
+      {/* !!images.length && <ImageCard image={images[0]} /> */}
+      {/* Uses JS map function to map each image in images array to new array
+          Each image in images array is now passed individually to new instance of ImageCard
+          key={i} allows for react to identify each array element more easily */}
+      {images.map((image, i) => (
+        <ImageCard key={i} image={image} />
+      ))}
       <TestComp />
     </div>
   );
