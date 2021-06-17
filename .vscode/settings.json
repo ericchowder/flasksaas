@@ -1,3 +1,11 @@
 {
-    "python.pythonPath": "api\\.venv\\Scripts\\python.exe"
+    "python.pythonPath": "api\\.venv\\Scripts\\python.exe",
+    "eslint.validate": [
+        "html",
+        "javascript",
+        "javascriptreact"
+    ],
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    }
 }
