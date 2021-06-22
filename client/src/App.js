@@ -42,9 +42,10 @@ function App() {
 
   // Gets passed into ImageCard to delete that particular image
   const handleDeleteImage = (id) => {
-    // If filter callback returns true, image remains in images arr
-    // If filter callback returns false, image is removed from arr
-    // Basically compares current image id with image.id
+    // If filter callback returns true, image remains in images arr.
+    // If filter callback returns false, image is removed from arr.
+    // Basically compares current image id with all image.ids, removes
+    // the correct one
     setImages(images.filter((image) => image.id !== id));
   };
 
@@ -70,6 +71,8 @@ function App() {
           {/* Uses JS map function to map each image in images array to new array
               Each image in images array is now passed individually to new instance of ImageCard
               key={i} allows for react to identify each array element more easily */}
+          {/* i.e. images.map loops through "images" array based on length,
+              the value of the instance is assigned to "image" along with an index */}
           {images.map((image, i) => (
             <Col key={i} className="pb-3">
               <ImageCard image={image} deleteImage={handleDeleteImage} />

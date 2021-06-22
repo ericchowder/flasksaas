@@ -28,3 +28,5 @@ and settings.json add codeActionsOnSave property
 15. Create lint script in package.json, add endOfLine property
 16. Created ImageCard comp, used JS maps to map ImageCard instances
 17. Used react boostrap containers to organize ImageCards
+18. Implemented ImageCard delete button functionality
+19. Got SVG logo from maketext.io, placed in images folder

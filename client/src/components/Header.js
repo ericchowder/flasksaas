@@ -1,5 +1,6 @@
 import React from "react";
 import { Navbar } from "react-bootstrap";
+import { ReactComponent as Logo } from "../images/logo.svg";
 
 // Vanilla JS object using CSS properties
 const navBarStyle = {
@@ -11,7 +12,10 @@ const navBarStyle = {
 const Header = ({ title }) => {
   return (
     <Navbar style={navBarStyle} variant="light">
+      {/* Previous title bar
       <Navbar.Brand href="/">{title}</Navbar.Brand>
+      */}
+      <Logo style={{ maxWidth: "20rem", maxHeight: "2rem" }} />
     </Navbar>
   );
 };
