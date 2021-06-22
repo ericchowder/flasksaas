@@ -40,6 +40,14 @@ function App() {
 
   console.log("searchWord auto updates:", searchWord);
 
+  // Gets passed into ImageCard to delete that particular image
+  const handleDeleteImage = (id) => {
+    // If filter callback returns true, image remains in images arr
+    // If filter callback returns false, image is removed from arr
+    // Basically compares current image id with image.id
+    setImages(images.filter((image) => image.id !== id));
+  };
+
   return (
     <div className="App">
       <Header title="Flask Saas" />
@@ -64,7 +72,7 @@ function App() {
               key={i} allows for react to identify each array element more easily */}
           {images.map((image, i) => (
             <Col key={i} className="pb-3">
-              <ImageCard image={image} />
+              <ImageCard image={image} deleteImage={handleDeleteImage} />
             </Col>
           ))}
         </Row>
