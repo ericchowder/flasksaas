@@ -29,4 +29,6 @@ and settings.json add codeActionsOnSave property
 16. Created ImageCard comp, used JS maps to map ImageCard instances
 17. Used react boostrap containers to organize ImageCards
 18. Implemented ImageCard delete button functionality
-19. Got SVG logo from maketext.io, placed in images folder
+19. Got SVG logo from maketext.io, placed in images folder, added 
+Logo ReactComponent into Header.js
+20. Implemented Welcome.js component (when nothing searched yet)

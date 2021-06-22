@@ -15,7 +15,7 @@ const Header = ({ title }) => {
       {/* Previous title bar
       <Navbar.Brand href="/">{title}</Navbar.Brand>
       */}
-      <Logo style={{ maxWidth: "20rem", maxHeight: "2rem" }} />
+      <Logo alt={title} style={{ maxWidth: "20rem", maxHeight: "2rem" }} />
     </Navbar>
   );
 };
