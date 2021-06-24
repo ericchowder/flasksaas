@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
 import { ReactComponent as Logo } from "../images/logo.svg";
 
 // Vanilla JS object using CSS properties
@@ -16,6 +16,8 @@ const Header = ({ title }) => {
       <Navbar.Brand href="/">{title}</Navbar.Brand>
       */}
       <Logo alt={title} style={{ maxWidth: "20rem", maxHeight: "2rem" }} />
+      <Nav.Link href="/">Home</Nav.Link>
+      <Nav.Link href="/">Counter</Nav.Link>
     </Navbar>
   );
 };
