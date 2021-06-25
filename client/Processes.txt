@@ -32,3 +32,4 @@ and settings.json add codeActionsOnSave property
 19. Got SVG logo from maketext.io, placed in images folder, added 
 Logo ReactComponent into Header.js
 20. Implemented Welcome.js component (when nothing searched yet)
+21. Done main architecture steps

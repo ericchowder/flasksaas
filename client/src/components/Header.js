@@ -17,7 +17,7 @@ const Header = ({ title }) => {
       */}
       <Logo alt={title} style={{ maxWidth: "20rem", maxHeight: "2rem" }} />
       <Nav.Link href="/">Home</Nav.Link>
-      <Nav.Link href="/">Counter</Nav.Link>
+      <Nav.Link href="/counter">Counter</Nav.Link>
     </Navbar>
   );
 };
