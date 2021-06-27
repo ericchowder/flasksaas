@@ -6,6 +6,8 @@ from flask import request
 from flask import Flask
 # Allow use of .env.local file
 from dotenv import load_dotenv
+# Allow use of CORS in flask
+from flask_cors import CORS
 
 # Load .env.local file and specify relative path
 load_dotenv(dotenv_path="./.env.local") 
@@ -20,6 +22,7 @@ if not UNSPLASH_KEY:
 
 # __name__ is the name of the flask module being ran
 app = Flask(__name__)
+CORS(app)
 
 app.config["SECRET_KEY"] = "mysecretkey"
 app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("SQLITE_URI", "")

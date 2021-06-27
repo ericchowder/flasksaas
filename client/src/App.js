@@ -5,7 +5,10 @@ import TestComp from "./components/TestComp";
 import ImageGallery from "./components/ImageGallery";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-const UNSPLASH_KEY = process.env.REACT_APP_UNSPLASH_KEY;
+//const UNSPLASH_KEY = process.env.REACT_APP_UNSPLASH_KEY;
+// In prod, will use API_URL
+// In dev, will use local host
+const API_URL = process.env.REACT_APP_API_URL || "http://127.0.0.1:5000";
 
 function App() {
   // Create state variables for search words
@@ -20,7 +23,8 @@ function App() {
     e.preventDefault();
     console.log(searchWord);
     fetch(
-      `https://api.unsplash.com/photos/random/?query=${searchWord}&client_id=${UNSPLASH_KEY}`
+      //`https://api.unsplash.com/photos/random/?query=${searchWord}&client_id=${UNSPLASH_KEY}`
+      `${API_URL}/new-image?query=${searchWord}`
     )
       .then((res) => res.json())
       .then((data) => {
